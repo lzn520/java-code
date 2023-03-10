@@ -12,7 +12,6 @@ class LinkNode{
     public LinkNode(int val){
         this.val =val;
     }
-
 }
 public class MyLinkedList {
     public LinkNode head;//指向链表头节点
