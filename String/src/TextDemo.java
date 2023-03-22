@@ -6,8 +6,13 @@
  * Time: 8:38
  */
 public class TextDemo {
-
     public static void main(String[] args) {
+        String str1 = "hello";
+        String str2 = new String("hello");
+        System.out.println(str1 == str2);
+    }
+
+    public static void main3(String[] args) {
         String str1 = "hello";
         String str2 = "hello";
         System.out.println(str1 == str2);
