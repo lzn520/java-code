@@ -1,0 +1,16 @@
+1.文本居中用  text-align
+2.文本设置上下边距用padding（内边距）最好，因为margin会出现塌陷
+3.元素居中用  margin：0 auto(对于按钮居中可以用块级元素包裹以后设置这个)
+4.弹性布局 display：flex； 
+  水平居中justify-content  垂直居中align-items
+5.文字缩进：text-indent
+6.去掉输入框的轮廓线：outline
+7.去掉边框：border：none
+8.按钮点上去有反馈 用伪类选择器 （找到按钮的类）：active{
+    background-color：grey；表示一点下去就变成了灰色
+}
+9.设置圆形边距：border-radius
+10.取消下划线，常用于a标签 text-decroation
+11.两个div之间要设置距离用 justify-content：space-between
+12.a标签是行内元素，很多边距不生效，可以改为块级元素 display：block
+13.> &gt;转义字符表示大于号

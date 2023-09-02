@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form action="https://www.sogou.com/" method="post">
+        <input type="text" name="admin">
+        <input type="password" name="password">
+        <input type="submit" value="提交">
+    </form> -->
+
+    <script src="jquery.js"></script>
+    <script>
+        $.ajax({
+            type:'get',
+            url:'https://www.sogou.com/',
+            success:function(body){
+             console.log("成功"+body)
+            },
+            error:function(){
+                console.log("失败")
+            }
+        })
+    </script>
+</body>
+</html>

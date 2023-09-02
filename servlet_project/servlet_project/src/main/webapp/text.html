@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <!-- 通过form表单来构造一个post请求 name对应的就是键-->
+  <!-- <form action="postGetParameter" method="post">
+    <input type="text" name="userId">
+    <input type="text" name="classId">
+    <input type="submit" value="提交">
+  </form> -->
+
+  <!-- 构造一个json格式的数据 -->
+  <input type="text" id="userId">
+  <input type="text" id="classId">
+  <input type="button" id="submit" value="提交">
+<script src="https://code.jquery.com/jquery-3.7.0.min.js">
+</script>
+<script>
+    // $.ajax({
+    //    type:'post',
+    //    url:'method',
+    //    success:function(body){
+    //     console.log(body);
+    //    }
+    // });
+
+    // 构造一个json格式的数据
+    let userIdInput = document.querySelector("#userId");
+    let classIdInput = document.querySelector("#classId");
+    let button = document.querySelector("#submit");
+    button.onclick = function(){
+      $.ajax({
+        type:'post',
+        url:'PostJson',
+        contentType:'application/json',
+        data:JSON.stringify({
+          userId:userIdInput.value,
+          classId:classIdInput.value,
+        }),
+        success: function(body){
+          console.log(body);
+        }
+      })
+    }
+</script>
+</body>
+</html>

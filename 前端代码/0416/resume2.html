@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>填写简历</title>
+</head>
+<body>
+    <h2>请填写简历</h2>
+    <table>
+        <tr>
+        <td>姓名</td>
+        <td><input type="text"></td>
+        </tr>
+        <tr>
+        <td>性别</td>
+        <td>
+            <input type="radio" name="gender" id="male" checked="checked"><label for="male"><img src="男.png" width="15px">男</label>
+            <input type="radio" name="gender" id="female" ><label for="female"><img src="女.png" width="15px">女</label>
+        </td>
+        </tr>
+        <tr>
+          <td>出生日期</td>
+          <td>
+            <select>
+              <option>--出生年份--</option>
+              <option>2001</option>
+              <option>2002</option>
+              <option>2003</option>
+           </select>
+           <select>
+            <option>--出生月份--</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+         </select>
+         <select>
+            <option>--出生日期--</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+         </select>
+        </td>
+        </tr>
+        <tr>
+          <td>就读学校</td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td>应聘岗位</td>
+          <td>
+            <input type="checkbox" id="frontend"><label for="frontend">前端开发</label>
+            <input type="checkbox" id="backend"><label for="backtend">后端开发</label>
+            <input type="checkbox" id="qa"><label for="qa">测试开发</label>
+            <input type="checkbox" id="op"><label for="op">运维开发</label>
+        </td>
+        </tr>
+        <tr>
+         <td>掌握的技能</td>
+         <td>
+            <textarea cols="30" rows="20"></textarea>
+         </td>
+        </tr>
+        <tr>
+            <td>项目经历</td>
+            <td>
+               <textarea cols="30" rows="20"></textarea>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="checkbox" id="confirm"><label for="confirm">我已仔细阅读过公司的要求</label></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="#">查看我的状态</a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <h3>请应聘者确认：</h3>
+                <ul>
+                    <li>以上信息真实有效</li>
+                    <li>能够尽快去公司实习</li>
+                    <li>接受公司的加班文化</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="reopen">重新开始一局游戏</button><br>
+    <span>请输入要猜的数字：</span>
+    <input type="text">
+    <button id="toguess">猜</button><br>
+    <span>已经猜的次数：</span>
+    <span id="Num">0</span><br>
+    <span>结果：</span>
+    <span id="outcome"></span>
+</body>
+<script>
+    //0.先将页面元素都获取到
+    let reopen = document.querySelector('.reopen');
+    let guessNum = document.querySelector('input');
+    let toguess = document.querySelector('#toguess');
+    let Num = document.querySelector('#Num');
+    let outcome = document.querySelector('#outcome');
+    //1.先要随机生成一个数字,用math.random生成 math.floor取整
+    
+    let toguessNum = Math.floor(Math.random()*100)+1;
+    console.log(toguessNum);
+    //2.点击猜按钮触发事件
+    toguess.onclick = function(){
+        if(guessNum.value == ''){
+            return;
+        }
+        //先要把字符变成数字
+        let current =  parseInt(guessNum.value);
+        console.log(guessNum.value);
+        if(current > toguessNum){
+            //如果猜的值比随机数字大，显示猜大了
+            outcome.innerHTML = '猜大了';
+            outcome.style.color = 'red';
+        }else if(current < toguessNum){
+            //如果猜的值比随机数字小，显示猜小了
+            outcome.innerHTML = '猜小了';
+            outcome.style.color = 'red';
+        }else{
+            //显示猜对了
+            outcome.innerHTML = '猜对了';
+            outcome.style.color = 'green';
+        }
+
+         //3.对已经猜的次数进行更新
+         //先变成整数
+         let  guessdeNum = parseInt(Num.innerHTML);
+         Num.innerHTML = guessdeNum + 1;
+    }
+   
+    //4.通过刷新页面实现重新开始游戏
+    reopen.onclick = function(){
+        //让页面刷新就可以,location是和doucument并列的对象
+        location.reload();
+    }
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class="screen">hh</div>
+    <button class="button1">这是一个按钮</button> -->
+    <div class="screen">0</div>
+    <button class="plus">plus</button>
+    <script>
+    let btn=document.querySelector('.plus');
+    btn.onclick = function(){
+        let screen = document.querySelector('.screen');
+        let val = screen.innerHTML;
+        val = parseInt(val);
+        val+=1;
+        screen.innerHTML = val;
+    }
+
+        // let btn =document.querySelector('.button1');
+        // btn.onclick = function(){
+        //     let screen = document.querySelector('.screen');
+        //     let content=screen.innerHTML;
+        //     content='good buy';
+        //     screen.innerHTML=content
+        // }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+        }
+        h1{
+            padding: 20px;
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            font-size: 10px;
+            color: #999;
+        }
+        .row{
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .row span{
+            width: 50px;
+            font-size: 12px ;
+            font-weight: bold;
+        }
+        .row input{
+            width: 150px;
+            height:25px;
+            outline: none;
+            text-indent: 0.5em;
+        }
+       .row #submit{
+            width: 150px;
+            height: 30px;
+            font-size: 15px;
+            margin:0 auto;
+            background-color: orange;
+            border: none;
+        }
+
+        .row #submit:active{
+            background-color: #999;
+        }
+    </style>
+   <div class="container">
+    <h1>表白墙</h1>
+    <p>输入后点击提交,会将信息显示在表格中</p>
+    <div class="row">
+        <span>谁： </span>
+        <input type="text">
+    </div>
+    <div class="row">
+        <span>对谁： </span>
+        <input type="text">
+    </div>
+    <div class="row">
+        <span>说什么：</span>
+        <input type="text">
+    </div>
+    <div class="row">
+        <button id="submit">提交</button>
+    </div>
+   </div>
+</body>
+
+<script>
+
+    let subbtn = document.querySelector('#submit');
+    subbtn.onclick = function(){
+    //1.当点击提交按钮的时候进行一下操作 ：获取内容
+    let inputs = document.querySelectorAll('input');
+    let from  = inputs[0].value;
+    let to = inputs[1].value;
+    let msg = inputs[2].value;
+    if(from == '' ||to == ''||msg == ''){
+        //用户还没写完
+        return;
+    }
+    //2.创建一个新的div将内容挂到html尾部
+    let newdiv = document.createElement('div');
+    newdiv.innerHTML = from +'对'+ to +'说'+msg;
+    newdiv.className ='row';
+    //拿到container元素
+    let container = document.querySelector('.container');
+    container.appendChild(newdiv);
+    //3.清空之前输入框的内容
+    for(let i = 0; i < inputs.length;i++){
+        inputs[i].value = '';
+    }
+    }
+    
+</script>
+</html>
