@@ -92,7 +92,7 @@ public class BlogCases extends InitAndEnd{
         String curTitle = driver.findElement(By.cssSelector("body > div.container > div.right > div:nth-child(1) > div.title")).getText();
         Assertions.assertEquals("自动化测试",curTitle);
         String curTime = driver.findElement(By.cssSelector("body > div.container > div.right > div:nth-child(1) > div.date")).getText();
-        Assertions.assertTrue(curTime.contains("2023-08-21"));
+        Assertions.assertTrue(curTime.contains("2023-09-04"));
     }
 
 
@@ -146,7 +146,7 @@ public class BlogCases extends InitAndEnd{
     }
 
     static Stream<Arguments> BlogTitle(){
-        return Stream.of(Arguments.arguments("http://127.0.0.1:8080/blog_system/blog_detail.html?blogId=","这是第三篇博客"));
+        return Stream.of(Arguments.arguments("http://127.0.0.1:8080/blog_system/blog_detail.html?blogId=","Linux系统"));
     }
 
     /**
